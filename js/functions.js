@@ -11,12 +11,12 @@ function checkPalenrom(string){
   return normalStr===reversStr;
 }
 
-const checkWorkingHours=(workStart,workEnd,meetingStart,meetingDuration)=>{
+const getMinutesFromHours=(timeString)=>{
+  const[hours, minutes]=timeString.split(':');
+  return Number(hours)*60 + Number(minutes);
+};
 
-  const getMinutesFromHours=(timeString)=>{
-    const[hours, minutes]=timeString.split(':');
-    return Number(hours)*60 + Number(minutes);
-  };
+const checkWorkingHours=(workStart,workEnd,meetingStart,meetingDuration)=>{
   const workStartMinutes = getMinutesFromHours(workStart);
   const workEndMinutes = getMinutesFromHours(workEnd);
   const meetingStartMinutes = getMinutesFromHours(meetingStart);
