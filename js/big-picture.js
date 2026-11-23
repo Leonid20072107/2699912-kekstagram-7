@@ -16,7 +16,7 @@ let shownCommentsCount=0;
 
 const createCommentElement=(comment)=>{
   const commentElement=commentTemplate.cloneNode(true);
-  commentElement.querySelector('.social__picture').src=comment.avatar;
+  commentElement.querySelector('.social__picture').src = comment.avatar;
   commentElement.querySelector('.social__picture').alt=comment.name;
   commentElement.querySelector('.social__text').textContent=comment.message;
 
@@ -78,3 +78,4 @@ const openBigPicture=(photo)=>{
   commentsLoader.addEventListener('click', onCommentsLoaderClick);
 };
 export {openBigPicture};
+
